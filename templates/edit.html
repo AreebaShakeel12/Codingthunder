@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/admin-bg.jpeg') }}')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>Admin Panel</h1>
+                    <span class="subheading">Manage your posts and change them</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content-->
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+            <h1>Add/Edit Post</h1>
+            <form id="contactForm" action="/edit/{{ sno }}" method="post" enctype="multipart/form-data">
+
+                <div class="form-floating mb-3">
+                    <input class="form-control" name="title" id="title" type="text" placeholder="Post Title" value="{{ post.title | default('') }}" required>
+                    <label for="title">Title</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input class="form-control" name="tagline" id="tagline" type="text" placeholder="Post Tagline" value="{{ post.tagline | default('') }}" required>
+                    <label for="tagline">Tagline</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input class="form-control" name="slug" id="slug" type="text" placeholder="Unique Slug" value="{{ post.slug | default('') }}" required>
+                    <label for="slug">Slug</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" name="content" id="content" placeholder="Post content" style="height: 12rem;" required>{{ post.content | default('') }}</textarea>
+                    <label for="content">Content</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input class="form-control" name="img_file" id="img_file" type="text" placeholder="Image filename" value="{{ post.img_file | default('') }}" required>
+                    <label for="img_file">Image File</label>
+                </div>
+
+                <button class="btn btn-primary text-uppercase" id="submit" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
