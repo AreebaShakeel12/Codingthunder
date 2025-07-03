@@ -11,8 +11,8 @@ Follow these steps to set up and run the application locally.
 First, clone this repository to your local machine:
 
 ```bash
-git clone [https://github.com/AreebaShakeel12/codingthunder.git](https://github.com/AreebaShakeel12/codingthunder.git)
-cd codingthunder
+git clone [https://github.com/AreebaShakeel12/Codingthunder.git](https://github.com/AreebaShakeel12/codingthunder.git)
+cd Codingthunder
 
 
 ### Configuration
@@ -31,7 +31,7 @@ This application relies on a `config.json` file to store various application set
     {
       "params": {
         "local_server": true,
-        "local_uri": "mysql+pymysql://root:your_mysql_password@localhost/codingthunder",
+        "local_uri": "mysql+pymysql://root:your_mysql_password@localhost/Codingthunder",
         "prod_uri": "mysql+pymysql://username:password@your_production_db_host/your_prod_db",
         "gmail_user": "your_gmail_username",
         "gmail_password": "your_gmail_app_password",
@@ -61,7 +61,7 @@ This application relies on a `config.json` file to store various application set
         * **`root:@localhost`**: Your MySQL username (`root`) and an empty password (`:` before `@`). Replace `root` with your actual MySQL username if different. If you have a password for your MySQL user, it would be `username:password@localhost`.
         * **`/smarthub`**: The name of your database. Ensure you have a database named `smarthub` created in your MySQL server, or change this to your desired database name.
 
-    * **`"prod_uri": "mysql+pymysql://root:@localhost/codingthunder"`**:
+    * **`"prod_uri": "mysql+pymysql://root:@localhost/Codingthunder"`**:
         * This is intended for your **production database connection string**.
         * **Important:** In a real production deployment, this URI will be different (e.g., pointing to a cloud database service) and should ideally be managed via **environment variables** on your hosting platform, not hardcoded here. For a truly production setup, you would likely remove this from `config.json` and use `os.environ.get('DATABASE_URL_PROD')` in your Flask app.
 
